@@ -12,22 +12,17 @@ rad = math.rad
 -- what should be ez.method?
 -- what is important to have?
 
---[[ OLD:
+-- GLOBALS
 clear = love.graphics.clear
 draw =  love.graphics.draw
 drawq =  love.graphics.drawq
-setColor = love.graphics.setColor
-rectangle = love.graphics.rectangle
-getWidth = love.graphics.getWidth
-getHeight = love.graphics.getHeight
 push = love.graphics.push
 pop = love.graphics.pop
 translate = love.graphics.translate
 rotate = love.graphics.rotate
 scale = love.graphics.scale
-circle = love.graphics.circle
-printOnScreen = love.graphics.print
---]]
+
+
 
 -- get color table
 require "LICK/lib/color"
