@@ -12,7 +12,7 @@ rad = math.rad
 -- what should be ez.method?
 -- what is important to have?
 
--- OLD:
+--[[ OLD:
 clear = love.graphics.clear
 draw =  love.graphics.draw
 drawq =  love.graphics.drawq
@@ -27,19 +27,26 @@ rotate = love.graphics.rotate
 scale = love.graphics.scale
 circle = love.graphics.circle
 printOnScreen = love.graphics.print
+--]]
 
--- NEW FROM LIST:
--- checkMode = love.graphics.checkMode
+-- get color table
+require "LICK/lib/color"
+
+-- start the capsulated module
+module(...,package.seeall)
+
+-- syntax shortcuts
+checkMode = love.graphics.checkMode
 circle = love.graphics.circle
 clear = love.graphics.clear
 draw = love.graphics.draw
 drawq = love.graphics.drawq
 getBackgroundColor = love.graphics.getBackgroundColor
 getBlendMode = love.graphics.getBlendMode
--- getCaption =love.graphics.getCaption
+getCaption =love.graphics.getCaption
 getColor = love.graphics.getColor
 getColorMode = love.graphics.getColorMode
--- getFont = love.graphics.getFont
+getFont = love.graphics.getFont
 getHeight = love.graphics.getHeight
 getLineStipple = love.graphics.getLineStipple
 getLineStyle = love.graphics.getLineStyle
@@ -50,7 +57,7 @@ getPointSize = love.graphics.getPointSize
 getPointStyle = love.graphics.getPointStyle
 getScissor = love.graphics.getScissor
 getWidth = love.graphics.getWidth
--- isCreated = love.graphics.isCreated
+isCreated = love.graphics.isCreated
 line = love.graphics.line
 newFont = love.graphics.newFont
 newFrameBuffer = love.graphics.newFramebuffer
@@ -92,12 +99,6 @@ setScissor = love.graphics.setScissor
 toggleFullscreen = love.graphics.toggleFullscreen
 translate = love.graphics.translate
 triangle = love.graphics.triangle
-
--- get color table
-require "LICK/lib/color"
-
--- start the capsulated module
-module(...,package.seeall)
 
 function color(r,g,b,a)
 	local color={}
@@ -157,10 +158,11 @@ function b()
 	black()
 end
 
+-- overwrite clear function!?
 -- fill the screen with translucent black
 function clear(alpha)
 	love.graphics.setColor(0,0,0,alpha)
-	love.graphics.rectangle("fill", 0,0,800,600)
+	love.graphics.rectangle("fill", 0,0,getWidth(),getHeight())
 end
 
 -- shorter clear
@@ -171,10 +173,10 @@ end
 -- one time clear
 function cls_once()
 	love.graphics.setColor(0,0,0,255)
-	love.graphics.rectangle("fill", 0,0,800,600)
+	love.graphics.rectangle("fill", 0,0,getWidth(),getHeight())
 end
 
-
+-- TODO: rename to rand2 birand? --> bipolar random
 -- returns random values from -1 to 1, g sets the equidistance
 function norm_random()
 	return 2 * math.random() - 1
