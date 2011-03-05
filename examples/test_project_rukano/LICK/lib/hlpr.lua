@@ -7,7 +7,12 @@ sin = math.sin
 deg = math.deg
 rad = math.rad
 
--- global love.graphics functions
+-- TODO:
+-- What should be global...?
+-- what should be ez.method?
+-- what is important to have?
+
+-- OLD:
 clear = love.graphics.clear
 draw =  love.graphics.draw
 drawq =  love.graphics.drawq
@@ -23,64 +28,70 @@ scale = love.graphics.scale
 circle = love.graphics.circle
 printOnScreen = love.graphics.print
 
--- love.graphics.getBackgroundColor
--- love.graphics.getBlendMode
--- love.graphics.getCaption
--- love.graphics.getColor
--- love.graphics.getColorMode
--- love.graphics.getFont
--- love.graphics.getHeight
--- love.graphics.getLineStipple
--- love.graphics.getLineStyle
--- love.graphics.getLineWidth
--- love.graphics.getMaxPointSize
--- love.graphics.getModes
--- love.graphics.getPointSize
--- love.graphics.getPointStyle
--- love.graphics.getScissor
--- love.graphics.getWidth
--- love.graphics.isCreated
--- love.graphics.line
--- love.graphics.newFont
--- love.graphics.newFramebuffer
--- love.graphics.newImage
--- love.graphics.newImageFont
--- love.graphics.newParticleSystem
--- love.graphics.newQuad
--- love.graphics.newScreenshot
--- love.graphics.newSpriteBatch
--- love.graphics.point
--- love.graphics.polygon
--- love.graphics.pop
--- love.graphics.present
--- love.graphics.print
--- love.graphics.printf
--- love.graphics.push
--- love.graphics.quad
--- love.graphics.rectangle
--- love.graphics.reset
--- love.graphics.rotate
--- love.graphics.scale
--- love.graphics.setBackgroundColor
--- love.graphics.setBlendMode
--- love.graphics.setCaption
--- love.graphics.setColor
--- love.graphics.setColorMode
--- love.graphics.setFont
--- love.graphics.setIcon
--- love.graphics.setLine
--- love.graphics.setLineStipple
--- love.graphics.setLineStyle
--- love.graphics.setLineWidth
--- love.graphics.setMode
--- love.graphics.setPoint
--- love.graphics.setPointSize
--- love.graphics.setPointStyle
--- love.graphics.setRenderTarget
--- love.graphics.setScissor
--- love.graphics.toggleFullscreen
--- love.graphics.translate
--- love.graphics.triangle
+-- NEW FROM LIST:
+-- checkMode = love.graphics.checkMode
+circle = love.graphics.circle
+clear = love.graphics.clear
+draw = love.graphics.draw
+drawq = love.graphics.drawq
+getBackgroundColor = love.graphics.getBackgroundColor
+getBlendMode = love.graphics.getBlendMode
+-- getCaption =love.graphics.getCaption
+getColor = love.graphics.getColor
+getColorMode = love.graphics.getColorMode
+-- getFont = love.graphics.getFont
+getHeight = love.graphics.getHeight
+getLineStipple = love.graphics.getLineStipple
+getLineStyle = love.graphics.getLineStyle
+getLineWidth = love.graphics.getLineWidth
+getMaxPointSize = love.graphics.getMaxPointSize
+getModes = love.graphics.getModes
+getPointSize = love.graphics.getPointSize
+getPointStyle = love.graphics.getPointStyle
+getScissor = love.graphics.getScissor
+getWidth = love.graphics.getWidth
+-- isCreated = love.graphics.isCreated
+line = love.graphics.line
+newFont = love.graphics.newFont
+newFrameBuffer = love.graphics.newFramebuffer
+newImage = love.graphics.newImage
+newImageFont = love.graphics.newImageFont
+newParticleSystem = love.graphics.newParticleSystem
+newQuad = love.graphics.newQuad
+newScreenshot = love.graphics.newScreenshot
+newSpriteBatch = love.graphics.newSpriteBatch
+point = love.graphics.point
+polygon = love.graphics.polygon
+pop = love.graphics.pop
+present = love.graphics.present
+print = love.graphics.print
+printf = love.graphics.printf
+push = love.graphics.push
+quad = love.graphics.quad
+rectagle = love.graphics.rectangle
+reset = love.graphics.reset
+rotate = love.graphics.rotate
+scale = love.graphics.scale
+setBackgroundColor = love.graphics.setBackgroundColor
+setBlendMode = love.graphics.setBlendMode
+setCaption = love.graphics.setCaption
+setColor = love.graphics.setColor
+setColorMode = love.graphics.setColorMode
+setFont = love.graphics.setFont
+setIcon = love.graphics.setIcon
+setLine = love.graphics.setLine
+setLineStipple = love.graphics.setLineStipple
+setLineStyle = love.graphics.setLineStyle
+setLineWidth = love.graphics.setLineWidth
+setMode = love.graphics.setMode
+setPoint = love.graphics.setPoint
+setPointSize = love.graphics.setPointSize
+setPointStyle = love.graphics.setPointStyle
+setRenderTarget = love.graphics.setRenderTarget
+setScissor = love.graphics.setScissor
+toggleFullscreen = love.graphics.toggleFullscreen
+translate = love.graphics.translate
+triangle = love.graphics.triangle
 
 -- get color table
 require "LICK/lib/color"
