@@ -249,6 +249,30 @@ function Image:draw()
 	love.graphics.draw(self.image, self.position.x, self.position.y)
 end
 
+--[[
+	POINT
+--]]
+-- @Point
+Point = Class(function(self, x, y, color, size, style)
+		 local color=color or ""
+		 local size=size or 1
+		 local style=style or "smooth"
+		 
+		 -- should this be here? or in the constructor?
+		 self.size = size
+		 self.style = style
+
+		 -- call constructor of Drawable		 
+		 Drawable.construct(self,x,y,color)
+	      end)
+Point:inherit(Drawable)
+
+-- #draw the point
+function Point:draw()
+	love.graphics.setColor(unpack(self.color))
+	love.graphics.setPoint(self.size, self.style)
+	love.graphics.point(self.position.x, self.position.y)
+end
 ----------------------------------------------------------------------
 -- TODO + COMMENTS --
 ----------------------------------------------------------------------
