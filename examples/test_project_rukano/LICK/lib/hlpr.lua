@@ -13,6 +13,7 @@ rad = math.rad
 -- what is important to have?
 
 -- GLOBALS
+--[[
 clear = love.graphics.clear
 draw =  love.graphics.draw
 drawq =  love.graphics.drawq
@@ -21,8 +22,7 @@ pop = love.graphics.pop
 translate = love.graphics.translate
 rotate = love.graphics.rotate
 scale = love.graphics.scale
-
-
+--]]
 
 -- get color table
 require "LICK/lib/color"
