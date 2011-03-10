@@ -180,11 +180,12 @@ end
 --]]
 -- @Circle: drawable circle
 Circle = Class(function(self, x, y, r, s, color)
-	self.r = r or 10
-	self.s = s or 16
-	-- call constructor of Drawable
-	Drawable.construct(self,x,y,color)
-end)
+		  local color=color or {255,255,255,255}
+		  self.r = r or 10
+		  self.s = s or 16
+		  -- call constructor of Drawable
+		  Drawable.construct(self,x,y,color)
+	       end)
 Circle:inherit(Drawable)
 
 -- #draw the circle
@@ -207,6 +208,7 @@ end
 --]]
 -- @Line: draw a line
 Line = Class(function(self, x, y, tx, ty, color) -- wats the dealio for polylines?
+		local color=color or {255,255,255,255}
 		self.x = x or 0
 		self.y = y or 0
 		self.tx = tx or 0
@@ -235,6 +237,7 @@ end
 --]]
 -- @Image: Image from file
 Image = Class(function(self, file, x, y, color, size, orientation)
+		 local color=color or {255,255,255,255}
 		 self.image = love.graphics.newImage(file)
 		 -- put positions, size, orientation...
 		 
@@ -254,7 +257,7 @@ end
 --]]
 -- @Point
 Point = Class(function(self, x, y, color, size, style)
-		 local color=color or ""
+		 local color=color or {255,255,255,255}
 		 local size=size or 1
 		 local style=style or "smooth"
 		 
