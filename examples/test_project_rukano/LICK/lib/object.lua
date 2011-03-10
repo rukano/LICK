@@ -311,6 +311,29 @@ function Polygon:draw(style)
    love.graphics.polygon(style, self.vertices)
 end
 
+--[[
+	RECT
+--]]
+-- @Rect
+Rect = Class(function(self, x, y, width, height, color, style)
+		   local color=color or {255,255,255,255}
+		   self.style = style or "line"
+		   self.width = width
+		   self.height = height
+
+		   -- TODO: compute center
+		   
+		   -- call constructor of Drawable		 
+		   Drawable.construct(self,x,y,color)
+		end)
+Rect:inherit(Drawable)
+
+-- #draw the polygon
+function Rect:draw(style)
+   local style=style or self.style
+   love.graphics.setColor(unpack(self.color))
+   love.graphics.rectangle(style, self.position.x, self.position.y, self.width, self.height)
+end
 
 
 
