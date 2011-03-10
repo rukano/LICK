@@ -369,6 +369,38 @@ function Triangle:draw(style)
    love.graphics.triangle(style, unpack(self.vertices))
 end
 
+--[[
+	TEXT
+--]]
+-- @Text
+Text = Class(function(self, x, y, text, rotation, scaleX, scaleY)
+		local color=color or {255,255,255,255}
+		self.text=text or "LICK WITH LOVE"
+		self.rotation=rotation or 0
+		self.scaleX = scaleX or 1
+		self.scaleY = scaleY or 1
+		self.font = "implement fonts?..."
+
+		-- TODO: compute center
+		
+		-- call constructor of Drawable		 
+		Drawable.construct(self,x,y,color)
+	     end)
+Text:inherit(Drawable)
+
+-- #display text on screen
+function Text:draw(text)
+   local text = text or self.text
+   love.graphics.setColor(unpack(self.color))
+   love.graphics.print(
+      text,
+      self.position.x,
+      self.position.y,
+      self.rotationr,
+      self.scaleX,
+      self.scaleY
+   )
+end
 
 ----------------------------------------------------------------------
 -- TODO + COMMENTS --
@@ -376,22 +408,6 @@ end
 
 --[[
 
-TODO! Implementate :rotate (from Objects center)
-
-
---* Polygon
-* Text -- print on screen . new font for every object?
---* Rect
-* Triangle
 * Particles
 
 --]]
-
-
--- EXAMPLE:
--- (put in love.load):
--- 	coco = Circle(300,300)
--- (put in love.update):
--- 	coco:set("x", 30)
--- (put in love.draw): 	
--- 	coco:draw("fill")
