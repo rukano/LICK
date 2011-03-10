@@ -328,13 +328,46 @@ Rect = Class(function(self, x, y, width, height, color, style)
 		end)
 Rect:inherit(Drawable)
 
--- #draw the polygon
+-- #draw the rectangle
 function Rect:draw(style)
    local style=style or self.style
    love.graphics.setColor(unpack(self.color))
    love.graphics.rectangle(style, self.position.x, self.position.y, self.width, self.height)
 end
 
+
+--[[
+	TRIANGLE
+--]]
+-- @Triangle
+Triangle = Class(function(self, vertices, color, style)
+		   local color=color or {255,255,255,255}
+		   self.style = style or "line"
+		   
+		   -- todo: ask for #6 number of table
+		   if type(vertices) ~= "table" then
+		      print("vertices has to be a even table!")
+		   end
+		   
+		   self.vertices = vertices
+
+		   -- first vertice = x, y
+		   local x=vertices[1]
+		   local y=vertices[2]
+
+		   -- TODO: compute center
+		   
+		   -- call constructor of Drawable		 
+		   Drawable.construct(self,x,y,color)
+		end)
+Triangle:inherit(Drawable)
+
+-- #draw the triangle
+function Triangle:draw(style)
+   local style=style or self.style
+   love.graphics.setColor(unpack(self.color))
+   love.graphics.triangle(style, unpack(self.vertices))
+end
 
 
 ----------------------------------------------------------------------
@@ -348,7 +381,7 @@ TODO! Implementate :rotate (from Objects center)
 
 --* Polygon
 * Text -- print on screen . new font for every object?
-* Rect
+--* Rect
 * Triangle
 * Particles
 
