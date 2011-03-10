@@ -322,14 +322,12 @@ end
 
 TODO! Implementate :rotate (from Objects center)
 
-* Point
-* Draw ? (more like in the draw function of every class)
-* Particles
-* Polygon
+
+--* Polygon
 * Text -- print on screen . new font for every object?
 * Rect
 * Triangle
-
+* Particles
 
 --]]
 
