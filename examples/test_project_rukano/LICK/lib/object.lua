@@ -276,6 +276,44 @@ function Point:draw()
 	love.graphics.setPoint(self.size, self.style)
 	love.graphics.point(self.position.x, self.position.y)
 end
+
+--[[
+	POLYGON
+--]]
+-- @Polygon
+Polygon = Class(function(self, vertices, color, style)
+		   local color=color or {255,255,255,255}
+		   
+		   self.style = style or "line"
+		   
+		   -- todo: ask for odd/even number of table
+		   if type(vertices) ~= "table" then
+		      print("vertices has to be a even table!")
+		   end
+		   
+		   self.vertices = vertices
+
+		   -- first vertice = x, y
+		   local x=vertices[1]
+		   local y=vertices[2]
+
+		   -- TODO: compute center
+		   
+		   -- call constructor of Drawable		 
+		   Drawable.construct(self,x,y,color)
+		end)
+Polygon:inherit(Drawable)
+
+-- #draw the polygon
+function Polygon:draw(style)
+   local style=style or self.style
+   love.graphics.setColor(unpack(self.color))
+   love.graphics.polygon(style, self.vertices)
+end
+
+
+
+
 ----------------------------------------------------------------------
 -- TODO + COMMENTS --
 ----------------------------------------------------------------------
